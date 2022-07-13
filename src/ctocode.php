@@ -74,7 +74,6 @@ include_once __DIR__ . '/helper/check.php';
 include_once __DIR__ . '/helper/common.php'; // 常用函数
 include_once __DIR__ . '/helper/file_do.php'; // 文件其他
 include_once __DIR__ . '/helper/file.php'; // 文件操作
-include_once __DIR__ . '/helper/html.php'; // html
 include_once __DIR__ . '/helper/http.php'; // http
 include_once __DIR__ . '/helper/img.php'; //
 include_once __DIR__ . '/helper/input.php';

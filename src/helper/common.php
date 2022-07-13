@@ -195,16 +195,3 @@ function ctoArrayTreeDe($data, &$return_arr = NULL, $is_self = FALSE, $tree_key 
         }
     }
 }
-// 获取某分类 所有相关子类
-function ctoArrayTreeSonIds($data, $up_id, $upid_field, $id_field)
-{
-    $ids = array();
-    foreach ($data as $key => $val) {
-        if ($val[$upid_field] == $up_id) {
-            $ids[] = $val[$id_field];
-            $ids_son = ctoArrayTreeSonIds($data, $val[$id_field], $upid_field, $id_field);
-            $ids = array_merge($ids, $ids_son);
-        }
-    }
-    return $ids;
-}
