@@ -28,5 +28,17 @@
         "files": [
             "src/ctocode.php"
         ]
-    }
+    },
+    "extra": {
+        "think": {
+            "config": {
+                "shiyun": {
+                    "throttle": "src/config/throttle.php"
+                },
+                "throttle": "src/config/throttle.php",
+                "shiyun/throttle": "src/config/throttle.php"
+            }
+        }
+    },
+    "minimum-stability": "dev"
 }
