@@ -67,7 +67,7 @@ function ctoLanguagePinyin($str, $charset = "utf-8", $ishead = 0)
     if ($slen < 2) {
         return $str;
     }
-    $pinyin_file_path = _CTOCODE_FONTS_ . '/pinyin.dat';
+    $pinyin_file_path = dirname(__DIR__) . '/fonts/pinyin.dat';
     $fp = fopen($pinyin_file_path, 'r');
     while (!feof($fp)) {
         $line = trim(fgets($fp));

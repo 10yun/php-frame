@@ -47,24 +47,13 @@ if (empty($ctocode_frame['_CTOCODE_LICENSE_']) || empty($ctocode_frame['_CTOCODE
  * 其他
  * ============================================================================
  */
-// ctocode 框架路径,定义一个常量,正则替换-获取当前文件的绝对目录,当前文件所在路径
-define('_CTOCODE_PHPFRAME_', preg_replace('/(\/|\\\\){1,}/', '/', __DIR__) . '/');
-// ctocode 字体
-define('_CTOCODE_FONTS_', dirname(_CTOCODE_PHPFRAME_) . '/assets/fonts/');
 // 项目路径
-define('_CTOCODE_PROJECT_', dirname(_CTOCODE_PHPFRAME_, 4) . '/');
-// 配置文件路径
-is_dir(_CTOCODE_PROJECT_ . 'config/') ? define('_CTOCODE_CONFIG_', _CTOCODE_PROJECT_ . 'config/') : exit('【ctocode - error】配置文件路径不存在～');
-// ctocode 组件开发
-define('_CTOCODE_ADDONS_', _CTOCODE_PROJECT_ . 'addons/');
-// ctocode 自己扩展类库
-define('_CTOCODE_EXTEND_', _CTOCODE_PROJECT_ . 'extend/');
+$frame_path = preg_replace('/(\/|\\\\){1,}/', '/', __DIR__) . '/';
+define('_CTOCODE_PROJECT_', dirname($frame_path, 4) . '/');
 // 文件上传存放 文件资源路径
 define('_CTOCODE_FILE_', _CTOCODE_PROJECT_ . 'public/storage/');
 // 程序运行产生的文件 ,ctocode 数据
 define('_CTOCODE_RUNTIME_', _CTOCODE_PROJECT_ . 'runtime/');
-// composer扩展类库
-define('_CTOCODE_VENDOR_', _CTOCODE_PROJECT_ . 'vendor/');
 
 // 2. 导入相关文件
 /*

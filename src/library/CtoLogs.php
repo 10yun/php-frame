@@ -16,8 +16,8 @@ namespace ctocode\library;
  * 如果商业用途务必到官方购买正版授权, 以免引起不必要的法律纠纷.
  * ============================================================================
  */
-// $logsObj = new \CTOCODE_Log ( _CTOCODE_RUNTIME_, '/ctocode_logs' );
-// $logsObj->writeLog ( 'SELECT FORM ' );
+// $logsObj = new \CTOCODE_Log ();
+// $logsObj->setDir('runtime')->writeLog ( 'SELECT FORM ' );
 class CtoLogs
 {
     protected static $instance = null;
@@ -33,6 +33,11 @@ class CtoLogs
     public static $ifWrite = true; // 是否写入
     public static $logFlag = "";
     public static $logPath = "";
+    public function setDir($dirPath = '')
+    {
+
+        return $this;
+    }
     function __construct($logPath, $logFlag)
     {
         self::$logPath = $logPath;
