@@ -55,7 +55,7 @@ function dbg_get_evnt($u)
     }
 }
 
-function filterstr($str)
+function filterStr($str)
 {
     global $_glb;
     if ($_glb['web_lang'] == 'utf-8') {

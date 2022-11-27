@@ -1,7 +1,0 @@
-<?php
-use {%namespace%}\{%useClass%}Model;
-use {%namespace%}\{%useClass%}Select;
-class {%className%} extends CtocodeRpcService
-{
-	 
-}

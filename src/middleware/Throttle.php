@@ -13,7 +13,7 @@ use think\Response;
 /**
  * 访问频率限制
  * Class Throttle
- * @package think\middleware
+ * @package shiyun\middleware
  */
 class Throttle
 {
@@ -40,9 +40,7 @@ class Throttle
         'visit_fail_text' => 'Too Many Requests',
 
     ];
-
     protected $wait_seconds = 0;
-
     protected $duration = [
         's' => 1,
         'm' => 60,

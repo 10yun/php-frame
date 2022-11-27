@@ -1,5 +1,7 @@
 {
     "name": "shiyun/php-frame",
+    "type": "library",
+    "license": "MIT",
     "description": "php frame for shiyun",
     "version": "1.0.1",
     "authors": [
@@ -16,7 +18,7 @@
             "email": "343196936@qq.com"
         }
     ],
-    "license": "MIT",
+    
     "require": {
         "php": ">=7.2"
     },
