@@ -186,12 +186,23 @@ function ctoCheckBrowser()
 
     // 方法2
     $user_agent_commentsblock = preg_match('|\(.*?\)|', $user_agent, $matches) > 0 ? $matches[0] : '';
-    $found_mobile = ctoCheckSubstrs($mobile_os_arr, $user_agent_commentsblock) || ctoCheckSubstrs($mobile_token_arr, $user_agent);
+
+    $found_mobile = ctoCheckSubstrs($mobile_os_arr, $user_agent_commentsblock)
+        || ctoCheckSubstrs($mobile_token_arr, $user_agent);
     if ($found_mobile) {
         return true;
     } else {
         return false;
     }
+}
+function ctoCheckSubstrs($substrs, $text)
+{
+    foreach ($substrs as $substr) {
+        if (false !== strpos($text, $substr)) {
+            return true;
+        }
+    }
+    return false;
 }
 function ctoCheckOS()
 {
@@ -217,13 +228,4 @@ function ctoCheckOS()
     }
 
     return $platform;
-}
-function ctoCheckSubstrs($substrs, $text)
-{
-    foreach ($substrs as $substr) {
-        if (false !== strpos($text, $substr)) {
-            return true;
-        }
-    }
-    return false;
 }

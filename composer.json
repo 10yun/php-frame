@@ -4,6 +4,7 @@
     "license": "MIT",
     "description": "php frame for shiyun",
     "version": "1.0.1",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "10yun",
@@ -18,7 +19,6 @@
             "email": "343196936@qq.com"
         }
     ],
-    
     "require": {
         "php": ">=7.2"
     },
@@ -30,17 +30,5 @@
         "files": [
             "src/ctocode.php"
         ]
-    },
-    "extra": {
-        "think": {
-            "config": {
-                "shiyun": {
-                    "throttle": "src/config/throttle.php"
-                },
-                "throttle": "src/config/throttle.php",
-                "shiyun/throttle": "src/config/throttle.php"
-            }
-        }
-    },
-    "minimum-stability": "dev"
+    }
 }
