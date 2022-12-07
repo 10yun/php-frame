@@ -355,5 +355,3 @@ if($webscan_switch && webscan_white ( $webscan_white_directory, $webscan_white_u
 		}
 	}
 }
-
-?>

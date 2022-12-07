@@ -8,6 +8,14 @@ namespace ctocode\library;
  */
 class CtoLogger
 {
+    protected $dirPath = '';
+
+    public static function setDir($dirPath = '')
+    {
+        $self = new self();
+        self::$dirPath = $dirPath;
+        return $self;
+    }
     /**
      * 记录数据信息
      * @param string $content 日志内容

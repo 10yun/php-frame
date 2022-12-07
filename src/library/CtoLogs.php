@@ -33,11 +33,7 @@ class CtoLogs
     public static $ifWrite = true; // 是否写入
     public static $logFlag = "";
     public static $logPath = "";
-    public function setDir($dirPath = '')
-    {
 
-        return $this;
-    }
     function __construct($logPath, $logFlag)
     {
         self::$logPath = $logPath;

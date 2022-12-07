@@ -1,6 +1,5 @@
 <?php
 
-
 function ctoStrRandId($length)
 {
     date_default_timezone_set('PRC');
@@ -15,7 +14,7 @@ function ctoStrNmd5($str, $len = 24, $start = 5)
     $hash = 'ctocode!@$=#=%+#com';
     return substr(md5($str . $hash), $start, $len);
 }
-function ctoStrGethashv($key)
+function ctoStrGetHashv($key)
 {
     $vstr_a = $vstr = '';
     $n = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

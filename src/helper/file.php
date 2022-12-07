@@ -14,13 +14,6 @@
  * 如果商业用途务必到官方购买正版授权, 以免引起不必要的法律纠纷.
  * ============================================================================
  */
-function ctoFileInclude($path = '')
-{
-    if (file_exists($path)) {
-        return include $path;
-    }
-    return false;
-}
 // 文件删除
 function ctoFileDel($dir, $type = TRUE)
 {
@@ -343,95 +336,4 @@ function ctoFileDirReplace($dir = '')
         $dir = preg_replace("/\/{1,}/", '/', $dir);
     }
     return $dir;
-}
-/**
- * @uses 文件列表
- * @param string $dir
- * @param number $level
- * @param array $config
- */
-function dbg_file_list($type = NULL, $dir, array $config = array(), $orderby = false, $orderdesc = 'asc')
-{
-    if ($type == 'template') {
-        $list = dbg_file_templatelist($dir, NULL, $config);
-    }
-    return $list;
-}
-
-// @action: 获取模板
-function dbg_file_templatelist($dir = NULL, $level, array $config = array())
-{
-    /*
-	 * 多种情况,筛选目录
-	 */
-    if (!empty($config['remove'])) {
-        // 不排查的文件夹
-        $config['remove'] = array(
-            'errors'
-        );
-    } else {
-        $config['remove'] = array(
-            'errors'
-        );
-    }
-    // 文件夹名字,默认不显示
-    $config['showfile'] = FALSE;
-    // 显示类型,默认显示类型1
-    $config['showtype'] = 1;
-    $arr = array();
-    if (is_dir($dir)) { // 开启 句柄
-        $fp = opendir($dir);
-        $file_list = array();
-        while (FALSE !== $file = readdir($fp)) {
-            if ($file != '.' && $file != '..') {
-                $file_ = iconv('gb2312', 'utf-8', $file); /* 保存目录名 可以取消注释 */
-                // 为目录,递归
-                if (is_dir($dir . '/' . $file_)) {
-                    if (!in_array($file_, $config['remove'])) {
-                        $list = dbg_file_templatelist($dir . '/' . $file_, $file_);
-                        $file_list = array_merge($file_list, $list);
-                    }
-                } else {
-                    $list = $dir . '/' . $file_;
-                    array_push($file_list, $list);
-                    // $list = empty ( $level ) ? $file_ : $level . '/' . $file_;
-                }
-            }
-        }
-        /* 关闭 句柄 */
-        closedir($fp);
-        /* 除去不要的数组 */
-        if (empty($level)) {
-            $result_list = array();
-            foreach ($file_list as $val) {
-                $removepath = $dir . '/';
-                $result_list[] = str_replace($removepath, '', $val);
-            }
-            unset($file_list);
-            return $result_list;
-        } else {
-            return $file_list;
-        }
-    } else {
-        return $dir . '不是有效目录';
-    }
-}
-function ctoFileDirTotal($dirname, &$dirnum, &$filenum)
-{
-    $dir = opendir($dirname);
-    echo readdir($dir) . "<br>"; // 读取当前目录文件
-    echo readdir($dir) . "<br>"; // 读取上级目录文件
-    while ($filename = readdir($dir)) {
-        // 要判断的是$dirname下的路径是否是目录
-        $newfile = $dirname . "/" . $filename;
-        // is_dir()函数判断的是当前脚本的路径是不是目录
-        if (is_dir($newfile)) {
-            // 通过递归函数再遍历其子目录下的目录或文件
-            $this->total($newfile, $dirnum, $filenum);
-            $dirnum++;
-        } else {
-            $filenum++;
-        }
-    }
-    closedir($dir);
 }
