@@ -24,10 +24,6 @@
  * @param  string $default 默认值
  * @return mixed
  */
-function ctoRequestAll()
-{
-    return $_REQUEST;
-}
 /**
  * 只接受想要的参数
  * @param array $needArr
