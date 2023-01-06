@@ -36,7 +36,7 @@ $ctocode_frame = array(
     /* LICENSE KEY */
     '_CTOCODE_LICENSE_KEY' => 'ctocodeV20170129'
 );
-if (empty($ctocode_frame['_CTOCODE_LICENSE_']) || empty($ctocode_frame['_CTOCODE_COPYRIGHT_'])) {
+if (empty($ctocode_frame['_CTOCODE_LICENSE_VER']) || empty($ctocode_frame['_CTOCODE_COPYRIGHT_'])) {
     exit('【ctocode - error】许可证或者版权错误～');
 }
 /*
