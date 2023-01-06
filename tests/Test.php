@@ -1,6 +1,6 @@
 <?php
 
-namespace ctocode\tests;
+namespace shiyun\tests;
 
 class Test
 {

@@ -3,7 +3,6 @@
 
 class DomainCross
 {
-
     /**
      * 防止跨域,解决处理跨域问题
      *
