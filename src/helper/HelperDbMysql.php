@@ -67,9 +67,9 @@ class HelperDbMysql
             return '';
         }
         // 表单是否存在
-        $is_table = \think\facade\Db::query("SHOW TABLES LIKE '{$table_name}'; ");
+        $is_table = \shiyun\support\Db::query("SHOW TABLES LIKE '{$table_name}'; ");
         if (!empty($is_table[0])) { // 字段是否存在
-            $field_array = \think\facade\Db::query("DESCRIBE {$table_name} ;");
+            $field_array = \shiyun\support\Db::query("DESCRIBE {$table_name} ;");
             $lists = array();
             foreach ($field_array as $val) {
                 $rows = array();
