@@ -52,8 +52,8 @@ class CtoLogger
      */
     public static function writeLog($content, $file_name)
     {
-        if (defined("_CTOCODE_RUNTIME_")) {
-            $file_name = _CTOCODE_RUNTIME_ . 'ctocode_log/' . $file_name;
+        if (defined("_PATH_RUNTIME_")) {
+            $file_name = _PATH_RUNTIME_ . 'ctocode_log/' . $file_name;
         } else {
             $file_name = dirname(__DIR__, 5) . '/runtime/ctocode_log/' . $file_name;
         }

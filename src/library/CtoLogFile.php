@@ -16,12 +16,12 @@ class CtoLogFile
         $txt = '';
         switch ($type) {
             case 'error':
-                $logfile = fopen(_CTOCODE_RUNTIME_ . "/logs/logfile_error_" . date("Ymd", time()) . ".txt", "a+");
+                $logfile = fopen(_PATH_RUNTIME_ . "/logs/logfile_error_" . date("Ymd", time()) . ".txt", "a+");
                 $txt = "========== 错误日志 - {$date} ==========\n";
                 break;
             case 'debug':
             default:
-                $logfile = fopen(_CTOCODE_RUNTIME_ . "/logs/logfile_debug_" . date("Ymd", time()) . ".txt", "a+");
+                $logfile = fopen(_PATH_RUNTIME_ . "/logs/logfile_debug_" . date("Ymd", time()) . ".txt", "a+");
                 $txt = "========== 调试日志 - {$date} ==========\n";
                 break;
         }
